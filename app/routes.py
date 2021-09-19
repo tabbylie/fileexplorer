@@ -27,10 +27,10 @@ def index():
     lastFolder = request.cookies.get('prevFolder')
     if lastFolder == None:
         lastFolder = dirpath
-    lastFolder = lastFolder.replace('\\', '\\\\')
+    
     if directory == None:
         directory = dirpath
-    directory = directory.replace('\\', '\\\\')
+
     direct = os.listdir(directory)
     folders, files = getfiles(direct, directory)
 

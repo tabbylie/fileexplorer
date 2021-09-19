@@ -14,7 +14,7 @@ function folderclick(folder, currentFolder) {
 }
 
 function folderback(lastfolder) {
-	if (lastfolder == "C:/Users/abbyl/Downloads") {
+	if (lastfolder == "/root/ftpfolder") {
 		fetch("https://134.122.121.84/set_cookie", {
 			method: 'POST',
 			headers: {
