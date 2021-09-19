@@ -2,14 +2,24 @@
 {% block content %}
 	<div id="wrapper">
 		<div id="content">
-			<a class="folder" href="">
-				<img class="img"src="/static/orange-folder-icon.jpg" alt="folder">
-				<p>Folder name</p>
+			<a id="back" href="/set_cookie" onclick="folderback('{{ lastfolder }}')">
+				<img src="/static/backarrow.png" alt="Back Arrow">
 			</a>
-			<a class="file" href="">
-				<img class="img" src="/static/file.png" alt="file">
-				<p>File Name</p>
-			</a>
+			{% for folder in folders %}
+				<a class="folder" href="/set_cookie" onclick="folderclick('{{ folder }}', '{{ currentFolder }}')">
+					<img class="img"src="/static/orange-folder-icon.jpg" alt="folder">
+					<p>{{ folder }}</p>
+				</a>
+			{% endfor %}
+			{% for file in files %}
+				<a class="file" href="">
+					<img class="img" src="/static/file.png" alt="file">
+					<p>{{ file }}</p>
+				</a>
+			{% endfor %}
 		</div>
 	</div>
+	<script>
+		console.log("{{ lastfolder }}")
+	</script>
 {% endblock %}

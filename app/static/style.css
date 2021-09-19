@@ -59,6 +59,21 @@ a:hover {
     flex-flow: row wrap;
 }
 
+#back {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+#back img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    filter: brightness(0) invert(1);
+}
+
 .folder {
     display: flex;
     flex-flow: column nowrap;
