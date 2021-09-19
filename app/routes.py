@@ -21,16 +21,18 @@ def getfiles(directory, dirpath):
 @app.route('/', methods=["GET", "POST"])
 @app.route('/index', methods=["GET", "POST"])
 def index():
-    # dirpath = path.join(os.environ['USERPROFILE'], 'Downloads')
+    # dirpath = path.join(os.environ['USERPROFILE'], 'Downloads') # testing!
     dirpath = '/root/ftpfolder'
     directory = request.cookies.get('currentFolder')
     lastFolder = request.cookies.get('prevFolder')
     if lastFolder == None:
         lastFolder = dirpath
-    
     if directory == None:
         directory = dirpath
-
+    directory = directory.replace('\\', '\\\\')
+    dirpath = dirpath.replace('\\', '\\\\')
+    if not directory.startswith(dirpath):
+        directory = dirpath
     direct = os.listdir(directory)
     folders, files = getfiles(direct, directory)
 

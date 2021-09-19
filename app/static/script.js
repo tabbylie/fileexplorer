@@ -15,7 +15,7 @@ function folderclick(folder, currentFolder) {
 
 function folderback(lastfolder) {
 	if (lastfolder == "/root/ftpfolder") {
-		fetch("https://134.122.121.84/set_cookie", {
+		fetch("https://134.122.121.84/set_cookie", { // https://134.122.121.84
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
