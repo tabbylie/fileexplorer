@@ -22,7 +22,7 @@ def getfiles(directory, dirpath):
 @app.route('/index', methods=["GET", "POST"])
 def index():
     # dirpath = path.join(os.environ['USERPROFILE'], 'Downloads') # testing!
-    dirpath = '/root/ftpfolder'
+    dirpath = '/home/ubuntu/ftpfolder'
     directory = request.cookies.get('currentFolder')
     lastFolder = request.cookies.get('prevFolder')
     if lastFolder == None:
